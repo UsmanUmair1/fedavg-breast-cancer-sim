@@ -23,21 +23,22 @@ We evaluate both **IID** (unequal random splits) and **Non-IID** (unequal splits
 
 ## Results
 
-*(Replace the bracketed values below with the exact metrics printed by your notebook run.)*
+*| Model / Setup                   | Data Split          | Test Accuracy | Malignant Recall | ROC-AUC |
+| ------------------------------- | ------------------- | ------------- | ---------------- | ------- |
+| Centralized Logistic Regression | Pooled train        | 0.9825        | 0.9762           | 0.9954  |
+| FedAvg                          | IID (simulated)     | 0.9825        | 0.9762           | 0.9960  |
+| FedAvg                          | Non-IID (simulated) | 0.9825        | 0.9762           | 0.9960  |
+| Local only, Site 1              | IID                 | 0.9649        | 0.9524           | 0.9950  |
+| Local only, Site 2              | IID                 | 0.9649        | 0.9048           | 0.9970  |
+| Local only, Site 3              | IID                 | 0.9649        | 0.9524           | 0.9924  |
+| Local only, Site 4              | IID                 | 0.9474        | 0.9524           | 0.9914  |
+| Local only, Site 1              | Non-IID             | 0.7982        | 1.0000           | 0.9888  |
+| Local only, Site 2              | Non-IID             | 0.9737        | 0.9286           | 0.9960  |
+| Local only, Site 3              | Non-IID             | 0.9737        | 0.9762           | 0.9957  |
+| Local only, Site 4              | Non-IID             | 0.6316        | 0.0000           | N/A*    |
 
-| Model / Setup | Data Split | Test Accuracy | Malignant Recall | ROC-AUC |
-| :--- | :--- | :---: | :---: | :---: |
-| Centralized Logistic Regression | Pooled Train | `[paste acc]` | `[paste recall]` | `[paste auc]` |
-| FedAvg (25 rounds, 5 local epochs) | IID (Simulated) | `[paste acc]` | `[paste recall]` | `[paste auc]` |
-| FedAvg (25 rounds, 5 local epochs) | Non-IID (Simulated) | `[paste acc]` | `[paste recall]` | `[paste auc]` |
-| Local-Only — `Hospital_Sim_1` | IID (Simulated) | `[paste acc]` | `[paste recall]` | `[paste auc]` |
-| Local-Only — `Hospital_Sim_2` | IID (Simulated) | `[paste acc]` | `[paste recall]` | `[paste auc]` |
-| Local-Only — `Hospital_Sim_3` | IID (Simulated) | `[paste acc]` | `[paste recall]` | `[paste auc]` |
-| Local-Only — `Hospital_Sim_4` | IID (Simulated) | `[paste acc]` | `[paste recall]` | `[paste auc]` |
-| Local-Only — `Hospital_Sim_1` | Non-IID (Simulated) | `[paste acc]` | `[paste recall]` | `[paste auc]` |
-| Local-Only — `Hospital_Sim_2` | Non-IID (Simulated) | `[paste acc]` | `[paste recall]` | `[paste auc]` |
-| Local-Only — `Hospital_Sim_3` | Non-IID (Simulated) | `[paste acc]` | `[paste recall]` | `[paste auc]` |
-| Local-Only — `Hospital_Sim_4` | Non-IID (Simulated) | `[paste acc]` | `[paste recall]` | `[paste auc]` |
+*Site 4's non-IID split contained only one class, so the local model never saw a malignant case.
+Single stratified split (seed 42), 114 test patients.
 
 ### Generated Figures
 
