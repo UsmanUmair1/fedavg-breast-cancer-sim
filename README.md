@@ -21,6 +21,8 @@ Both **IID** partitions (unequal random splits) and **non-IID** partitions (uneq
 - **Hand-written FedAvg (`numpy`):** 25 communication rounds, 5 local gradient-descent epochs per round, L2 regularization, learning rate 0.15. Each site trains a binary logistic regression starting from the current global weights `(w, b)`, and the server averages the parameters weighted by each site's sample count.
 - **Optional Gaussian noise experiment:** zero-mean Gaussian noise N(0, sigma^2) is added to the aggregated global weights at several noise levels to illustrate how weight perturbation affects accuracy.
 
+Sanity check: FedAvg with a single site holding all training data reproduces centralized gradient descent (identical accuracy, recall, and ROC-AUC).
+
 ## Results
 
 Single stratified split (seed 42), 114 test patients. Malignant is the positive class.
