@@ -66,7 +66,7 @@ Accuracy falls from 0.9825 to 0.9298 as noise increases, while malignant recall 
 
 *Accuracy, malignant recall, and ROC-AUC for centralized, federated, and local-only models.*
 
-![Accuracy versus noise](figures/dp_noise_tradeoff.png)
+![Accuracy versus noise](figures/noise_tradeoff.png)
 
 *Effect of Gaussian noise on the shared weights on test accuracy, malignant recall, and ROC-AUC.*
 
